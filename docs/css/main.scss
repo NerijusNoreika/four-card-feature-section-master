@@ -1,0 +1,197 @@
+/*****************************************************
+                         PRIMARY                           
+*****************************************************/
+
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+
+$shadowBlue: hsla(229, 6%, 66%, 0.8);
+
+
+
+/*****************************************************
+                         NEUTRAL                           
+*****************************************************/
+
+$white: #fff;
+$darkBlue: hsl(234, 12%, 34%);
+$grayBlue: hsl(229, 6%, 66%);
+$lightGray: hsl(0, 0%, 98%);
+
+
+/*****************************************************
+                          BASE STYLE                          
+*****************************************************/
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html, body {
+    height: 100%;
+    font-size: 15px;
+
+}
+
+body {
+    margin: 0;
+    background: $lightGray;
+}
+
+main {
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0rem auto 0rem;
+}
+
+.heading-container {
+    margin: 0 auto;
+
+}
+
+
+/*****************************************************
+                         HEADING                            
+*****************************************************/
+
+.heading-container {
+    text-align: center;
+    .first-heading {
+        font-size: 2.5rem;
+        font-weight: 200;
+        margin-bottom: 0px;
+        color: $grayBlue;
+    }
+    .second-heading {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-top: 0px;
+        color: $darkBlue;
+    }
+
+
+    h3 {
+        color: $grayBlue;
+        font-weight: 200;
+    }
+}
+
+
+
+
+
+/*****************************************************
+                         SERVICE                           
+*****************************************************/
+
+
+.service-container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 1rem; 
+    grid-template-areas: 
+    "supervisor team calculator"
+    "supervisor karma calculator"; 
+    .service-title {
+        font-size: 1.3rem;
+        color: $darkBlue;
+        font-weight: 600;
+    }
+    .service-text {
+        color: $grayBlue;
+        font-size: 0.95rem;
+    }
+
+    .service-image {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: end;
+    }
+
+   
+
+    // &.karma::after {
+    //     background: red;
+    // }
+
+}
+
+.service {
+    margin-top: 2rem;
+    background: $white;
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    min-width: 100%;
+    box-shadow: 0 13px 25px -18px $shadowBlue;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: red;
+    }
+
+    &.karma {
+        grid-area: karma;
+    }
+    &.karma::after {
+        background: $orange;
+    }
+
+    &.supervisor {
+        grid-area: supervisor;
+        place-self: center;
+    }
+    &.supervisor::after {
+        background: $cyan;
+    }
+    &.calculator {
+        grid-area: calculator;
+        place-self: center;
+    }
+    &.calculator::after {
+        background: $blue;
+    }
+    &.team {
+        grid-area: team;
+    }
+
+    
+    &.team::after {
+        background: $red;
+    }
+
+}
+
+
+
+/*****************************************************
+                         REPONSIVE STLES                           
+*****************************************************/
+
+@media screen and (max-width: 550px) {
+    .service-container {
+        display:flex;
+        flex-direction: column;
+
+        .service {
+            margin-top: 1rem;
+        }
+    }
+
+    main {
+        padding: 0 1.5rem;
+    }
+}

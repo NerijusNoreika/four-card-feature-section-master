@@ -1,0 +1,162 @@
+/*****************************************************
+                         PRIMARY                           
+*****************************************************/
+/*****************************************************
+                         NEUTRAL                           
+*****************************************************/
+/*****************************************************
+                          BASE STYLE                          
+*****************************************************/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  background: #fafafa;
+}
+
+main {
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0rem auto 0rem;
+}
+
+.heading-container {
+  margin: 0 auto;
+}
+
+/*****************************************************
+                         HEADING                            
+*****************************************************/
+.heading-container {
+  text-align: center;
+}
+
+.heading-container .first-heading {
+  font-size: 2.5rem;
+  font-weight: 200;
+  margin-bottom: 0px;
+  color: #a3a5ae;
+}
+
+.heading-container .second-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 0px;
+  color: #4c4e61;
+}
+
+.heading-container h3 {
+  color: #a3a5ae;
+  font-weight: 200;
+}
+
+/*****************************************************
+                         SERVICE                           
+*****************************************************/
+.service-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  grid-template-areas: "supervisor team calculator" "supervisor karma calculator";
+}
+
+.service-container .service-title {
+  font-size: 1.3rem;
+  color: #4c4e61;
+  font-weight: 600;
+}
+
+.service-container .service-text {
+  color: #a3a5ae;
+  font-size: 0.95rem;
+}
+
+.service-container .service-image {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: end;
+}
+
+.service {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  min-width: 100%;
+  box-shadow: 0 13px 25px -18px rgba(163, 165, 174, 0.8);
+}
+
+.service::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: red;
+}
+
+.service.karma {
+  grid-area: karma;
+}
+
+.service.karma::after {
+  background: #fcaf4a;
+}
+
+.service.supervisor {
+  grid-area: supervisor;
+  place-self: center;
+}
+
+.service.supervisor::after {
+  background: #45d3d3;
+}
+
+.service.calculator {
+  grid-area: calculator;
+  place-self: center;
+}
+
+.service.calculator::after {
+  background: #549ef2;
+}
+
+.service.team {
+  grid-area: team;
+}
+
+.service.team::after {
+  background: #ea5353;
+}
+
+/*****************************************************
+                         REPONSIVE STLES                           
+*****************************************************/
+@media screen and (max-width: 550px) {
+  .service-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .service-container .service {
+    margin-top: 1rem;
+  }
+  main {
+    padding: 0 1.5rem;
+  }
+}
