@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/NerijusNoreika/four-card-feature-section-master)
-- Live Site URL: [Add live site URL here](https://nerijusnoreika.github.io/four-card-feature-section-master/)
+- Solution URL: [URL](https://github.com/NerijusNoreika/four-card-feature-section-master)
+- Live Site URL: [URL](https://nerijusnoreika.github.io/four-card-feature-section-master/)
 
 ## My process
 
